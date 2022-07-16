@@ -1,5 +1,4 @@
 package com.blankj.easy._009;
-
 /**
  * @author luojing
  * @description LJSolution
