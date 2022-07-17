@@ -1,17 +1,15 @@
 package com.blankj.easy._020;
 
 /**
- * <pre>
- *     author: Blankj
- *     blog  : http://blankj.com
- *     time  : 2017/04/28
- *     desc  :
- * </pre>
+ * @author luojing
+ * @description LJSolution
+ * @date 2022/07/17
  */
-public class Solution {
+
+public class LJSolution {
     public boolean isValid(String s) {
         char[] stack = new char[s.length() + 1];
-        int top = 1;
+        int top = 1; //top从1开始，避免--top的数组越界Exception的发生
         for (char c : s.toCharArray()) {
             if (c == '(' || c == '[' || c == '{') {
                 stack[top++] = c;
@@ -23,12 +21,12 @@ public class Solution {
                 return false;
             }
         }
-        return top == 1; //防止奇数个括号返回true的情形出现
+        return top == 1;
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        System.out.println(solution.isValid("()[]{}({[]})"));
-        System.out.println(solution.isValid("(])]"));
+        LJSolution ljSolution = new LJSolution();
+        System.out.println(ljSolution.isValid("()[]{}({[]})"));
+        System.out.println(ljSolution.isValid("(])]"));
     }
 }
